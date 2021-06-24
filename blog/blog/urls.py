@@ -33,6 +33,15 @@ urlpatterns = [
     #app_name 子应用的名字
 
     #namespace命名空间:可以能够很好地防止因为不同的子应用间的路由的名字而导致的冲突
-    path('',include(('users.urls','users'),namespace='users'))
+    path('',include(('users.urls','users'),namespace='users')),
    # path('',log),#测试输出info级别的日志信息
+
+
+    path('',include(('home.urls','home'),namespace='home')),
 ]
+
+# 图片访问的路由
+from django.conf import settings
+from django.conf.urls.static import static
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
