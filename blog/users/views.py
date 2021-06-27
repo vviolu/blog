@@ -404,14 +404,7 @@ class WriteBlogView(LoginRequiredMixin, View):
         return render(request, 'write_blog.html', context=context)
 
     def post(self, request):
-        '''
-        1.接收数据
-        2.验证数据
-        3.数据入库
-        4.跳转到指定页面
-        :param request:
-        :return:
-        '''
+
 
         # 接收数据
         avatar = request.FILES.get('avatar')
