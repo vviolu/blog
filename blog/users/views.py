@@ -27,15 +27,8 @@ from django.urls import reverse
 
 class RegisterView(View):
     """用户注册"""
-
     def get(self, request):
-        """
-        提供注册界面
-        :param request: 请求对象
-        :return: 注册界面
-        """
         return render(request, 'register.html')
-
     def post(self, request):
         """
         1.接收数据
@@ -47,8 +40,6 @@ class RegisterView(View):
             2.5 短信验证码是否和redis中的一致
         3.保存注册信息
         4.返回响应跳转到指定页面
-        :param request:
-        :return:
         """
         # 1.接收数据
         mobile = request.POST.get('mobile')
